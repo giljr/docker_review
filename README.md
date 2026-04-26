@@ -194,8 +194,47 @@ docker compose up --build
 ```bash
 docker exec -i mysql-container mysql -uroot -pjaythree outfit_db < api/db/script.sql
 ```
+👉 Confere como **verificar** e **deletar** dados no MySQL de forma correta:
 
----
+No terminal: `docker exec -it mysql-container mysql -uroot -pjaythree`
+
+#### 🔎 Verificar dados
+
+🔸 Selecionar o banco: `USE outfit_db;`
+
+🔸 Listar tabelas: `SHOW TABLES;`
+
+🔸 Visualizar dados: `SELECT * FROM products;`
+
+ #### 🧹 Deletar dados
+🔸 Limpar todos os registros (mantém a tabela): `TRUNCATE TABLE products;`
+
+🔸 Deletar registros específicos: `DELETE FROM products WHERE id = 1;`
+
+🔸 Remover a tabela inteira: `DROP TABLE products;`
+
+🔸 Apagar o banco completo: `DROP DATABASE outfit_db;`
+
+### 🫶  Exemplos Pro (direto do terminal)
+🔸 Ver tabelas: `docker exec -i mysql-container mysql -uroot -pjaythree outfit_db -e "SHOW TABLES;"`
+
+🔸 Ver dados:`docker exec -i mysql-container mysql -uroot -pjaythree outfit_db -e "SELECT * FROM products;"`
+
+### 🧠 Regra mental
+🔸 `docker exec -i <container> mysql [credenciais] [database]`
+
+🔸 mysql = comando
+
+🔸 outfit_db = argumento (banco)
+
+# ✅ Boas práticas
+
+
+🔸 Use TRUNCATE para reset rápido
+🔸 Use DELETE quando precisar de controle fino
+🔸 Evite usar DROP DATABASE sem necessidade
+🔸 Sempre valide com SELECT antes e depois
+```
 
 # 🔎 Passo 7 — Testes
 
