@@ -1,0 +1,11 @@
+# Node
+node_modules/
+
+# MySQL volume
+api/db/data/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
