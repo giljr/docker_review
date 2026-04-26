@@ -227,14 +227,16 @@ No terminal: `docker exec -it mysql-container mysql -uroot -pjaythree`
 
 🔸 outfit_db = argumento (banco)
 
-# ✅ Boas práticas
+### ✅ Boas práticas
 
 
 🔸 Use TRUNCATE para reset rápido
+
 🔸 Use DELETE quando precisar de controle fino
+
 🔸 Evite usar DROP DATABASE sem necessidade
+
 🔸 Sempre valide com SELECT antes e depois
-```
 
 # 🔎 Passo 7 — Testes
 
